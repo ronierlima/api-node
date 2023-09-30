@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js",
-    "prod": "npx prisma generate && env-cmd -f .prod.env node app.js",
+    "start": "nodemon app.js",
     "studio": "prisma studio"
   },
   "keywords": [],

@@ -15,15 +15,21 @@ app.get("/", async (req, res) => {
 });
 
 app.post("/", async (req, res) => {
-  const user = req.body;
+  try {
+    const user = req.body;
 
-  user.senha = await bcrypt.hash(user.senha, 12);
+    user.senha = await bcrypt.hash(user.senha, 12);
 
-  const newUser = await prisma.user.create({
-    data: user,
-  });
+    const newUser = await prisma.user.create({
+      data: user,
+    });
 
-  res.send(newUser);
+    res.send(newUser);
+  } catch (error) {
+
+    res.status(500).send(error.message);
+
+  }
 });
 
 app.listen(3000, () => {
