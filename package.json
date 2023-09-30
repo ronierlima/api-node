@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "postinstall": "prisma generate",
-    "prod": "env-cmd -f .prod.env node app.js"
+    "prod": "prisma generate && env-cmd -f .prod.env node app.js",
+    "studio": "prisma studio"
   },
   "keywords": [],
   "author": "",
