@@ -17,7 +17,7 @@ app.get("/", async (req, res) => {
 app.post("/", async (req, res) => {
   const user = req.body;
 
-  user.senha = bcrypt.hash(user.senha, 12);
+  user.senha = await bcrypt.hash(user.senha, 12);
 
   const newUser = await prisma.user.create({
     data: user,
