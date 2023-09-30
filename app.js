@@ -7,8 +7,8 @@ const prisma = new PrismaClient();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  const users = prisma.user.findMany()
+app.get("/", async (req, res) => {
+  const users = await prisma.user.findMany()
   
   res.send(users);
 });
