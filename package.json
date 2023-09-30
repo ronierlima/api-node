@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "prod": "prisma generate && env-cmd -f .prod.env node app.js",
+    "prod": "npx prisma generate && env-cmd -f .prod.env node app.js",
     "studio": "prisma studio"
   },
   "keywords": [],
@@ -17,7 +17,6 @@
     "dotenv": "^16.3.1",
     "env-cmd": "^10.1.0",
     "express": "^4.18.2",
-    "nodemon": "^3.0.1",
-    "prisma": "^5.3.1"
+    "nodemon": "^3.0.1"
   }
 }
